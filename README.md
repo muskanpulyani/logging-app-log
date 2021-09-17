@@ -4,8 +4,11 @@
 
     
 **Approach**
-    Designed a client server Architecture . Below are the roles of client and server in this 
-    
+    Designed a client server Architecture . Below are the roles of client and server in this<br />
+**Directory Structure** <br />
+<img width="574" alt="Screenshot 2021-09-18 at 3 21 39 AM 2" src="https://user-images.githubusercontent.com/39254653/133857630-cca308a2-ad07-4435-9809-815991bfc38b.png">
+
+
  **Server**<br />
     server are the remote ip whose logs user want to fetch <br />
     create a new socket using the given address and protocol number<br />
