@@ -1,0 +1,7 @@
+---
+- name: Enable remote-log service
+  systemd:
+    name: remote_log
+    state: "{{ remote_log_svc_state }}"
+    enabled: "{{ remote_log_start_on_boot }}"
+    daemon_reload: yes

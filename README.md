@@ -1,2 +1,2 @@
-# logging-app-log
-logging-app-log
+# loging-app-log
+loging-app-log

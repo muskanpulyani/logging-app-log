@@ -1,0 +1,10 @@
+---
+- name: setting remote logging app
+  hosts: all
+  vars:
+    file_name: '{{ file_name }}'
+  roles:
+    - role: logs_setup
+      become: yes
+      
+

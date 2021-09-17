@@ -1,0 +1,8 @@
+---
+
+
+- name: Install Prometheus ElasticSearch Exporter
+  include: build.yml
+  tags:
+    - build
+

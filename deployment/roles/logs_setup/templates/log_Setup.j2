@@ -1,0 +1,15 @@
+[Unit]
+Description=remote_log setup
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=root
+Group=root
+Type=simple
+ExecStart=/opt/{{app_name}}/env/bin/python3 /opt/{{app_name}}/server/agent.py {{file_name}}
+[Install]
+WantedBy=multi-user.target
+
+
+

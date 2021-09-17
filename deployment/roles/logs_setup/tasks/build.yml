@@ -1,0 +1,28 @@
+---
+- name: install packages
+  apt: name={{item}} state=present
+  with_items:
+    - python3-pip
+    - python3
+
+- name: clone repo
+  git:
+    repo: 'https://github.com/{{ github_user }}/{{ app_name }}.git'
+    dest: /opt/{{ app_name }}
+    update: yes 
+
+- name: install modules in a virtualenv
+  pip:
+    requirements: /opt/{{ app_name }}/server/requirements.txt
+    virtualenv: /opt/{{ app_name }}/env
+    virtualenv_python: python3
+
+- name: create systemd script
+  become: yes
+  template:
+    src: log_Setup.j2
+    dest: /etc/systemd/system/remote_log.service
+  notify: restart log_setup
+
+
+
