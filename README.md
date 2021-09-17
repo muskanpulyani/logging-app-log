@@ -7,7 +7,8 @@
     Designed a client server Architecture . Below are the roles of client and server in this<br />
     
 **Directory Structure** <br />
-<img width="574" alt="Screenshot 2021-09-18 at 3 21 39 AM 2" src="https://user-images.githubusercontent.com/39254653/133857630-cca308a2-ad07-4435-9809-815991bfc38b.png">
+<img width="336" alt="Screenshot 2021-09-18 at 3 55 55 AM" src="https://user-images.githubusercontent.com/39254653/133859937-c666c556-9547-4863-b519-8f0ff8578bb7.png">
+
 
 
  **Server**<br />
@@ -86,7 +87,15 @@ ansible-playbook -i x.x.x.x, logging.yml --private-key private_key_path  -u user
 Clone the code to /opt directory<br />
 Creates a virualenv and install the requirments.txt<br />
 Create systemd service remote_log which will continously transmit logs to particular socket.<br />
-<img width="1002" alt="Screenshot 2021-09-18 at 3 46 48 AM" src="https://user-images.githubusercontent.com/39254653/133859405-81107f4f-9ce2-4256-b8fe-1a6d5c16ff5b.png">
+<img width="1065" alt="Screenshot 2021-09-18 at 3 54 30 AM" src="https://user-images.githubusercontent.com/39254653/133860288-da8deb5e-04b1-41e2-9ecb-93882aa75749.png">
+<br />
+**Client**<br />
+client will run .py file with remote ip address which will we passed as argument 
+```
+python3 logging-app-log/client/client.py x.x.x.x
+```
+
+
 
 
 
