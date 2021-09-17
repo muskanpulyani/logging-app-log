@@ -5,6 +5,7 @@
     
 **Approach**
     Designed a client server Architecture . Below are the roles of client and server in this<br />
+    
 **Directory Structure** <br />
 <img width="574" alt="Screenshot 2021-09-18 at 3 21 39 AM 2" src="https://user-images.githubusercontent.com/39254653/133857630-cca308a2-ad07-4435-9809-815991bfc38b.png">
 
@@ -72,15 +73,20 @@
 ```
 
 **Setup and Run the Server**<br />
-**Delployment** <br />
-<br />
-
-
-
-
-
-
-
+**Deployment** <br />
+**server**<br />
+Run ansible script to setup server<br />
+user: user to login to remote machine eg .ubuntu/ec2-user/centos<br />
+file_name: repersent the log file eg. /var/log/syslog<br />
+x.x.x.x : repersent the remote ip
+```
+ansible-playbook -i x.x.x.x, logging.yml --private-key private_key_path  -u user -e file_name=file_path
+```
+**Ansible Script do**
+Clone the code to /opt directory<br />
+Creates a virualenv and install the requirments.txt<br />
+Create systemd service remote_log which will continously transmit logs to particular socket.<br />
+<img width="1002" alt="Screenshot 2021-09-18 at 3 46 48 AM" src="https://user-images.githubusercontent.com/39254653/133859405-81107f4f-9ce2-4256-b8fe-1a6d5c16ff5b.png">
 
 
 
