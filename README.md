@@ -82,7 +82,7 @@ x.x.x.x : repersent the remote ip
 ```
 ansible-playbook -i x.x.x.x, logging.yml --private-key private_key_path  -u user -e file_name=file_path
 ```
-**Ansible Script do**
+**Ansible Script do**<br />
 Clone the code to /opt directory<br />
 Creates a virualenv and install the requirments.txt<br />
 Create systemd service remote_log which will continously transmit logs to particular socket.<br />
