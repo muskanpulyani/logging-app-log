@@ -1,16 +1,19 @@
 # loging-app-log
 **Problem Statement**
-    Building a Remote tail utility such that end user can able to fetch particular logs of given remote server 
+    Building a Remote tail utility so that end user can able to fetch particular logs of given remote server 
+
     
 **Approach**
     Designed a client server Architecture . Below are the roles of client and server in this 
     
- **Server**
+ **Server**<br />
     server are the remote ip whose logs user want to fetch <br />
-    Now create a new socket using the given address family,socket type and protocol number and bind our server to the specified port<br />
-    Data is continuously pushed/transmitted to the open connection <br />
-    The server can able to connect multiple clients concurrently 
+    create a new socket using the given address and protocol number<br />
+    Bind our server to the specified port<br />
+    Now Data is continuously pushed/transmitted to the open connection <br />
+    fyi ..The server can able to connect multiple clients concurrently 
     
+ ```
     import socket
     import sys
     from sh import tail
@@ -39,17 +42,43 @@
         ThreadCount += 1
         print(ThreadCount)
     ServerSocket.close()
-  
-    
-    
-    
-    
-    
-  
-    
-    
-    
+```
+  **client**<br />
+  client will first create the socket object<br />
+  creates conenction with the socket<br />
+  Then start reciving the data from the socket<br />
+  fyi . client connection will break once the server stop<br />
+  ```
+    import socket
+    import sys
 
-    
-    
+    def main():
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.connect((socket.gethostbyname(sys.argv[1]), 1241))
+        while True:
+            full_msg = ''
+            new_msg = True
+            msg = s.recv(256)
+            if not msg:
+                break
+            print(msg)
+        s.close()
+
+    if __name__ == "__main__":
+        main()
+```
+
+**Setup and Run the Server**<br />
+**Delployment** <br />
+<br />
+
+
+
+
+
+
+
+
+
+
    
