@@ -1,8 +1,11 @@
 ---
-
-
-- name: Install Prometheus ElasticSearch Exporter
+- name: setup and run remote logging
   include: build.yml
   tags:
     - build
+
+- name: enable remote_log service 
+  include: configure.yml
+  tags:
+    - configure
 
