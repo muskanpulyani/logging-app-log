@@ -1,5 +1,5 @@
 ---
 github_user: muskanpulyani
-app_name: loging-app-log
+app_name: logging-app-log
 remote_log_svc_state: started
 remote_log_start_on_boot: yes

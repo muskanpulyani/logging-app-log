@@ -1,2 +1,1 @@
 sh==1.14.2
-virtualenv

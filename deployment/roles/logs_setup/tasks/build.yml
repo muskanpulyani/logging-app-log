@@ -1,9 +1,29 @@
 ---
+- name: Update and upgrade apt packages
+  apt:
+    update_cache: yes
+  become: true
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+- name: Update and upgrade yum packages
+  yum:
+    update_cache: yes
+  become: true
+  when: ansible_distribution == 'Amazon' or ansible_distribution == 'CentOS'
+
 - name: install packages
   apt: name={{item}} state=present
   with_items:
     - python3-pip
     - python3
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+- name: install packages
+  yum: name={{item}} state=present
+  with_items:
+    - python3-pip
+    - python3
+  when: ansible_distribution == 'Amazon' or ansible_distribution == 'CentOS'
 
 - name: clone repo
   git:
@@ -16,6 +36,8 @@
     requirements: /opt/{{ app_name }}/server/requirements.txt
     virtualenv: /opt/{{ app_name }}/env
     virtualenv_python: python3
+  environment:
+      PATH: "{{ ansible_env.PATH }}:{{ ansible_user_dir }}/.local/bin"
 
 - name: create systemd script
   become: yes
