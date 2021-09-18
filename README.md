@@ -4,7 +4,7 @@
 
     
 **Approach**
-    Designed a client server Architecture . Below are the roles of client and server in this<br />
+    Designed a client server Architecture . Below are the roles of client and server <br />
     
 **Directory Structure** <br />
 <img width="336" alt="Screenshot 2021-09-18 at 3 55 55 AM" src="https://user-images.githubusercontent.com/39254653/133859937-c666c556-9547-4863-b519-8f0ff8578bb7.png">
@@ -12,9 +12,9 @@
 
 
  **Server**<br />
-    server are the remote ip whose logs user want to fetch <br />
+    server are the remote ip whose logs end user needs to fetch <br />
     create a new socket using the given address and protocol number<br />
-    Bind our server to the specified port<br />
+    Bind the server to the specified port<br />
     Now Data is continuously pushed/transmitted to the open connection <br />
     fyi ..The server can able to connect multiple clients concurrently 
     
