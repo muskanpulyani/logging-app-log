@@ -95,8 +95,12 @@ client will run .py file with remote ip address which will we passed as argument
 python3 logging-app-log/client/client.py x.x.x.x
 ```
 
+**client1 reciving system  logs from server **
+<img width="1277" alt="Screenshot 2021-09-18 at 2 07 43 PM" src="https://user-images.githubusercontent.com/39254653/133882675-f7ede1cd-530c-453e-9636-545304ffbaa7.png">
+**
+client2 reciving system  logs from server**
+<img width="1278" alt="Screenshot 2021-09-18 at 2 07 33 PM" src="https://user-images.githubusercontent.com/39254653/133882704-e66c6acf-faa4-4d0e-8ad5-3ea80380e376.png">
 
 
-
-
-   
+**server establish two conenctions** 
+<img width="775" alt="Screenshot 2021-09-18 at 2 07 58 PM" src="https://user-images.githubusercontent.com/39254653/133882714-73d38494-315c-4d9c-aca5-3e23cc3bd588.png">
